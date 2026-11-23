@@ -51,7 +51,7 @@ int main(void)
 }
 ```
 
-Après compilation, on récupère le mot de passe de l’utilisateur `root` :
+Après compilation, on récupère le mot de passe de l’utilisateur `root` :  
 ![solve](images/solve.png)
 
 Il suffit ensuite d’afficher le flag  
