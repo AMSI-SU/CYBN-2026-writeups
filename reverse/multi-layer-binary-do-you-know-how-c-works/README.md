@@ -52,13 +52,13 @@ Lors du CTF, j’ai remarqué qu’il semblait y avoir un mécanisme d’anti-de
 
 J’ai privilégié l’utilisation de catchpoints pour arrêter l’execution lorsque des appels systèmes à `write` étaient effectués, puisque ceux-ci contiendraient forcément l’adresse du buffer source contenant le binaire déchiffré.
 
-Un simple `catch syscall write` et quelques itérations permettent de localiser l’adresse du buffer  
+Un simple `catch syscall write` et quelques itérations permettent de localiser l’adresse du buffer (on peut même y remarquer les octets `0x454c46`, soit `ELF`) 
 ![gdb-write-syscall](images/gdb-write-syscall.png)
 
 Enfin, la commande `dump memory stage2.bin addresse_binaire addresse_binaire+taille_du_stage2` permet de récupérer la partie 2 du challenge (la taille étant passée comme argument lors de l’appel à write).
 
 Petite vérification du dump avec `file`, on semble avoir bien fait les choses  
-![file-stage2](file-stage2.png)
+![file-stage2](images/file-stage2.png)
 
 ## Analyse du stage2 et récupération du flag
 
@@ -68,7 +68,7 @@ L’analyse statique de ce second binaire révèle une logique plutôt similaire
 - on déchiffre puis exécute le stage3 en mémoire si la clef est correcte.  
 
 Ce deuxième stage contenait une fonction appelée `_INIT_1` par mon Binja, contenant beaucoup d’instructions `add` et des appels aux fonctions `sysconf` et `mprotect`. 
-![init_1_func](image/init_1_func.png)
+![init_1_func](images/init_1_func.png)
 
 Plutôt que de l’analyser de façon statique, j’ai décidé (par pure fénéantise) d’utiliser gdb pour observer la logique menant à un accès valide ou non. Cela m’a permis d’isoler le bout de code ci-dessous qui :  
 - charge l’adresse du buffer contenant l’entrée utilisateur ;
