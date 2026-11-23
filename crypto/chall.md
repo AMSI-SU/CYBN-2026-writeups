@@ -1,6 +1,7 @@
 # Titre du challenge
 
 __*Catégorie :*__ (REVERSE, CRYPTO, WEB, ...)  
+__*Difficulté :*__ (Intro, Easy, ...)  
 __*Flag :*__ `FLAG{put_flag_here}`  
 
 > Description  
