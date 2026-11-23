@@ -1,7 +1,7 @@
 # Multi Layer Binary - Do you know how C works ? 
 
 __*Catégorie :*__ REVERSE  
-__*Difficulté :*__ Easy
+__*Difficulté :*__ Easy  
 __*Flag :*__ `CYBN{xor-m3-t0-z3r0}`
 
 > Description  
@@ -67,19 +67,19 @@ L’analyse statique de ce second binaire révèle une logique plutôt similaire
 - on fait une tambouille avec, puis on utilise le résultat pour générer la clef `sha256("stage2" + user_input)` ;
 - on déchiffre puis exécute le stage3 en mémoire si la clef est correcte.  
 
-Ce deuxième stage contenait une fonction appelée `_INIT_1` par mon Binja, contenant beaucoup d’instructions `add` et des appels aux fonctions `sysconf` et `mprotect`. 
+Ce deuxième stage contenait une fonction appelée `_INIT_1` par mon Binja, contenant beaucoup d’instructions `add` et des appels aux fonctions `sysconf` et `mprotect`.  
 ![init_1_func](images/init_1_func.png)
 
 Plutôt que de l’analyser de façon statique, j’ai décidé (par pure fénéantise) d’utiliser gdb pour observer la logique menant à un accès valide ou non. Cela m’a permis d’isoler le bout de code ci-dessous qui :  
 - charge l’adresse du buffer contenant l’entrée utilisateur ;
 - charge l’adresse de la fonction `_INIT_1` ;
-- charge l’adresse de 4 octets présents dans la section `.rodata`
-- itère sur l’entrée utilisateur et sur ces octets réalise des opérations `xor`
+- charge l’adresse de 4 octets présents dans la section `.rodata` ;
+- itère sur l’entrée utilisateur et sur ces octets en réalisant des opérations `xor`.
 
-La logique de comparaison de mot de passe repose ici sur l’opération `or` à $start+0x159d, qui vérifie si résultat est égal à 0 après les deux `xor`.
+La logique de comparaison de mot de passe repose ici sur l’opération `or` à $start+0x159d, qui vérifie si résultat est égal à 0 après les deux `xor`.  
 ![binja-deobf-logic](images/binja-deobf-logic.png)
 
-Avec gdb, j’ai confirmé que les deux opérations `xor` s’appuyaient sur les deux séquences d’octets ci-dessous
+Avec gdb, j’ai confirmé que les deux opérations `xor` s’appuyaient sur les deux séquences d’octets ci-dessous :  
 ![binja-xor-data|50](images/binja-xor-data.png)
 
 Le XOR étant réversible, de telle sorte que `A ^ B = C` et `B ^ C = A`, il nous est alors facile de récupérer le flag en écrivant un petit script python :  
