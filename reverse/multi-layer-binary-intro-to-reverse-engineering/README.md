@@ -5,7 +5,8 @@ __*Difficulté :*__ Intro
 __*Flag :*__ `CYBN{35SY_P3ASY}`  
 
 > Description  
-> TODO: Description du challenge
+> Petit challenge de mise en bouche. Trouve le flag dans ce binaire.
+> Format du flag : `CYBN{...}`
 
 ---
 
