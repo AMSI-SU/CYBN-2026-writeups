@@ -1,7 +1,7 @@
 # RTFM
 
 __*Catégorie :*__ SYSTEM  
-__*Difficulté :*__ Intro / Easy ?  
+__*Difficulté :*__ Easy  
 __*Flag :*__ `CYBN{m4n_p4g3s_4r3_y0ur_b3st_fr13nds}`  
 
 > Description  
