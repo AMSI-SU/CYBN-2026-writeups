@@ -94,4 +94,5 @@ print(pwn.xor(xor_flag, key))
 ![flag|60](images/flag.png)
 
 Encore un first blood !
-![first-blood|80](images/first-blood.png)
+
+<img src="images/first-blood.png" alt="first-blood" width="50%">
