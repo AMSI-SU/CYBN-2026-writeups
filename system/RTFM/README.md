@@ -5,7 +5,8 @@ __*Difficulté :*__ Easy
 __*Flag :*__ `CYBN{m4n_p4g3s_4r3_y0ur_b3st_fr13nds}`  
 
 > Description  
-> Quelque chose comme "Lire les manpages de la librairie getflag"
+> Vous connaissez les man pages ? On va faire un petit test alors.  
+> J'ai créé une lib qui s'appelle `get_flag`, à vous de trouver comment l'utiliser.
 
 ---
 
