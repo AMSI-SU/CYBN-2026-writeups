@@ -14,9 +14,10 @@ __*Flag :*__ `CYBN{l3_t4bl34u_p4rl3}`
 
 ## Partie 1
 
-In-game, on obtient un indice sur l'endroit où chercher :
+In-game, une nouvelle salle s'ouvre avec un nouveau coffre et le PNJ nous donne un indice sur l'endroit où chercher :
+![Hint](images/coffre.png)
+![Hint](images/hint.png)
 
-TODO add photo
 
 ## Partie 2
 
@@ -25,7 +26,11 @@ On extrait les ressources du jeu via [GDRE](https://github.com/GDRETools/gdsdeco
 ❯ ./gdre_tools.x86_64
 ```
 
-TODO add photo
+Puis dans RE tools > recover project > EscapeRoom.exe
+
+![GDRE0](images/gdre0.png)
+On peut exporter les fichiers extraits
+![GDRE1](images/gdre1.png)
 
 ## Partie 3
 
@@ -41,7 +46,7 @@ On cherche "shield" dans les fichiers extraits :
 ## Partie 4
 
 Le fichier `./EscapeRoom/addons/kaykit_dungeon_remastered/swords_shield_gold_dungeon_texture.png` est :
-![Hint](images/hint.png)
+![Fichier](images/fichier.png)
 
 ## Partie 5
 

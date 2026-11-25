@@ -1,7 +1,7 @@
 # Sélection surnaturelle
 
 __*Catégorie :*__ MISC  
-__*Difficulté :*__ TODO add difficulty
+__*Difficulté :*__ Easy
 __*Flag :*__ `CYBN{j41_p4ss3_l3_c4st1ng_m4m4n_v4_3tr3_f13r3}`  
 
 > Description  

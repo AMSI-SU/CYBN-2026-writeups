@@ -1,4 +1,4 @@
-# Fichier de sauvegarde
+# Donjon Escape - Fichier de sauvegarde
 
 __*Catégorie :*__ REVERSE  
 __*Difficulté :*__ Intro  
@@ -21,11 +21,15 @@ Lancer le jeu via [wine](https://www.winehq.org/), tool permettant d'exécuter d
 ❯ wine EscapeRoom.exe
 ``` 
 
-
 ## Partie 2
+
+On trouve le coffre avec lequel on peut intéragir :
+![coffre](images/coffre.png)
 
 Le PNJ nous donne un indice :
 ![Hint 1](images/hint.png)
+
+## Partie 3
 
 On trouve la sauvegarde dans `~/.wine/drive_c/users/user/AppData/Roaming/Godot/app_userdata/EscapeRoom/savegame.json`
 
@@ -33,13 +37,15 @@ On trouve la sauvegarde dans `~/.wine/drive_c/users/user/AppData/Roaming/Godot/a
 ❯ cat ~/.wine/drive_c/users/user/AppData/Roaming/Godot/app_userdata/EscapeRoom/savegame.json
 
 {
-        "pin_1": "3470",
+        "pin_1": "7921",
         "session_id": "f2999953fb7e2ee582506473c9a3cde385e176bd973b59f5e3adfb4fbd18f9fc",
         "version": 1
 }
 ```
 
-## Partie 3
+## Partie 4
 
-On dévérouille le coffre avec le pin_1 de savegame.json et le flag apparaît :
-![Flag 1](images/flag.png)
+On entre le pin trouvé dans la sauvegarde dans le cadenas du coffre et le flag apparaît :
+![Cadenas](images/cadenas.png)
+
+![Flag](images/flag.png)
